@@ -1,0 +1,17 @@
+.content-nav{
+    background-color: black;
+    color: white;
+    height: 6vh;
+    display: flex;
+    justify-content: space-evenly;
+
+    &-btn{
+        height: 3vh;
+        margin-top: 15px;
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+}
