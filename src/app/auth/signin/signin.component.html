@@ -4,10 +4,11 @@
     </div>
     <div class="login-form">
         <h3>Email:</h3>
-        <input type="text" placeholder="Username" /><br />
+        <input type="text" placeholder="Username" [(ngModel)]="user.email" /><br />
         <h3>Contraseña:</h3>
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Password" [(ngModel)]="user.password" />
         <br />
-        <input type="button" value="Iniciar Sesión" class="login-button" />
+        <input type="button" value="Iniciar Sesión" class="login-button" (click)="signIn()" />
     </div>
+    {{user | json}}
 </div>
