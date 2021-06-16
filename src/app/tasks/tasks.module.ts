@@ -14,6 +14,11 @@ import { TaskListComponent } from './task-list/task-list.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    FormComponent,
+    TaskComponent,
+    TaskListComponent
   ]
 })
 export class TasksModule { }

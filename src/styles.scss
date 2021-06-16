@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-image: url("./assets/bg_hero.png");
+  background-color: #320a46;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
