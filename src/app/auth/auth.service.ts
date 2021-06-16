@@ -14,7 +14,7 @@ export class AuthService {
       .pipe(
         map((res) => res.response),
         tap(
-          res => localStorage.setItem('user', res)
+          res => localStorage.setItem('user', res.token)
         )
         )
       .subscribe((user) => {
