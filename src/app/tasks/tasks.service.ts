@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
 	providedIn: 'root',
 })
+
 export class TasksService {
 	constructor(private http: HttpClient) {}
 
@@ -13,8 +14,8 @@ export class TasksService {
 		);
 	}
 
-	postTask(task) {
-		return this.http.get(
+	postTask(task: any) {
+		return this.http.post(
 			'https://organizateunpoco.herokuapp.com/api/tasks',
 			task
 		);

@@ -4,15 +4,14 @@
     </div>
     <div class="login-form">
         <h3>Tarea:</h3>
-        <input type="text" placeholder="Titulo de la tarea..." /><br />
+        <input type="text" placeholder="Titulo de la tarea..." [(ngModel)]="formData.title" /><br />
         <h3>Descripción:</h3>
-        <input type="text" placeholder="Descripción de la tarea..." /><br />
+        <input type="text" placeholder="Descripción de la tarea..." [(ngModel)]="formData.description"/><br />
         <h3>Fecha:</h3>
-        <input type="date" placeholder="Fecha..." /><br />
+        <input type="date" placeholder="Fecha..." [(ngModel)]="formData.date"/><br />
         <h3>Hora:</h3>
-        <input type="time" placeholder="Hora..." /><br />
-
+        <input type="time" placeholder="Hora..." [(ngModel)]="formData.time"/><br />
         <br />
-        <input type="button" value="Agregar" class="login-button" />
+        <input type="button" value="Agregar" class="login-button" (click)="addTask()" />
     </div>
 </div>
