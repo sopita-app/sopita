@@ -10,20 +10,14 @@ const routes : Routes=[
   loadChildren: ()=> import('./auth/auth.module').then( m => m.AuthModule)
 },
 {
-  path: '', loadChildren:() =>import('./tasks/tasks.module').then(m => m.TasksModule),
+  path: '', 
+  loadChildren:() =>import('./tasks/tasks.module').then(m => m.TasksModule),
   canLoad: [AuthGuard],
   canActivate: [AuthGuard]
 },
 {path: '**', redirectTo: 'auth'}
 ]
 
-
-// const routes: Routes = [
-//   { path: 'login', component: SigninComponent },
-//   { path: 'register', component: SignupComponent },
-//   { path: 'home', component: TaskListComponent, pathMatch: 'full' },
-//   { path: '**', redirectTo: 'home' }
-// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
