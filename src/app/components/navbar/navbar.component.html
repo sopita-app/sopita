@@ -1,4 +1,29 @@
-<div class="content-nav">
+<!-- <div class="content-nav">
     <h3>Hola, Naranja X</h3>
     <button class="content-nav-btn">Añadir tarea</button>
-</div>
+</div> -->
+
+<header class="header">
+    <nav class="navbar">
+        <div class="hamburger" (click)="toggleNavBar()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <a href="#" class="nav-logo">NX - Agenda</a>
+        <ul [ngClass]="showNavBar ? 'nav-menu' : 'hidden'">
+            <li class="nav-item">
+                <a routerLink="home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="nav-link">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/register']" routerLinkActive="router-link-active" class="nav-link">Registrate</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+</header>
