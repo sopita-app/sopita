@@ -7,7 +7,8 @@ import { map, tap } from 'rxjs/operators';
 export class AuthService {
   constructor(private http: HttpClient) {}
   user: any = {};
-  loggedUser: any = {};
+  loggedUser: any;
+  
   signIn(user: any) {
     this.http
       .post<any>('https://organizateunpoco.herokuapp.com/api/user/signin', user)
@@ -26,5 +27,9 @@ export class AuthService {
         }
 
       });
+  }
+  logOut(){
+    this.loggedUser = null
+    localStorage.clear()
   }
 }

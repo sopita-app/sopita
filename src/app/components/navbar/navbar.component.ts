@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +8,12 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   showNavBar:boolean=false
-  constructor() { }
+  constructor(private authService : AuthService) { }
 
   toggleNavBar(){
     this.showNavBar = !this.showNavBar
   }
   logOut(){
-   // localStorage.clear()
-   //ejecutar una funcion del servicio de auth que vuelva a null o vacio el loogedUser
+    this.authService.logOut()
   }
 }
