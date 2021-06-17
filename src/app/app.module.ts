@@ -4,7 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module'
 import { AppComponent } from './app.component';
 import { TasksModule } from './tasks/tasks.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'
+import { NavBarModule } from './components/components.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     AuthModule,
     TasksModule,
-    HttpClientModule
+    HttpClientModule,
+    NavBarModule,
+    RouterModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

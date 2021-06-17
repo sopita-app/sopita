@@ -1,17 +1,100 @@
-.content-nav{
-    background-color: black;
-    color: white;
-    height: 6vh;
-    display: flex;
-    justify-content: space-evenly;
+// .content-nav{
+//     background-color: black;
+//     color: white;
+//     height: 6vh;
+//     display: flex;
+//     justify-content: space-evenly;
 
-    &-btn{
-        height: 3vh;
-        margin-top: 15px;
-        cursor: pointer;
-        color: white;
-        background-color: transparent;
-        border: 2px solid white;
-        border-radius: 5px;
-    }
+//     &-btn{
+//         height: 3vh;
+//         margin-top: 15px;
+//         cursor: pointer;
+//         color: white;
+//         background-color: transparent;
+//         border: 2px solid white;
+//         border-radius: 5px;
+//     }
+// }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  transition: all ease 0.3s;
+}
+.hidden {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  padding: 1rem 3rem;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: #482ff7;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #482ff7;
+}
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    display: block;
+    top: 4rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 60%;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }
