@@ -5,22 +5,24 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
 
-const routes : Routes=[
-  {path: 'auth', 
-  loadChildren: ()=> import('./auth/auth.module').then( m => m.AuthModule)
-},
-{
-  path: '', 
-  loadChildren:() =>import('./tasks/tasks.module').then(m => m.TasksModule),
-  canLoad: [AuthGuard],
-  canActivate: [AuthGuard]
-},
-{path: '**', redirectTo: 'auth'}
-]
-
+const routes: Routes = [
+	{
+		path: 'auth',
+		loadChildren: () =>
+			import('./auth/auth.module').then((m) => m.AuthModule),
+	},
+	{
+		path: '',
+		loadChildren: () =>
+			import('./tasks/tasks.module').then((m) => m.TasksModule),
+		canLoad: [AuthGuard],
+		canActivate: [AuthGuard],
+	},
+	{ path: '**', redirectTo: 'auth' },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
