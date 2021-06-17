@@ -6,16 +6,15 @@ import { TasksService } from '../tasks.service';
 	templateUrl: './task-list.component.html',
 	styleUrls: ['./task-list.component.scss'],
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent {
 	tasks: [] = [];
 	newTask: any = {};
 
 	constructor(private taskService: TasksService) {
 		//creo que es asi, mañana sigo viendo y lo pruebo
 		this.taskService.getTasks().subscribe((data: any) => {
+			console.log(data.response);
 			this.tasks = data.response;
 		});
 	}
-
-	ngOnInit(): void {}
 }

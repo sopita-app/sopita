@@ -14,15 +14,15 @@ export class TasksService {
 	}
 
 	postTask(task) {
-		return this.http.get(
+		return this.http.post(
 			'https://organizateunpoco.herokuapp.com/api/tasks',
 			task
 		);
 	}
 
-	deleteTask(id: string) {
-		return this.http.get(
-			'https://organizateunpoco.herokuapp.com/api/tasks' + id
+	deleteTask(id: any) {
+		return this.http.delete(
+			'https://organizateunpoco.herokuapp.com/api/task/' + id
 		);
 	}
 }

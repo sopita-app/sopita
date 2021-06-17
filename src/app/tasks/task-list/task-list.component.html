@@ -1,7 +1,3 @@
-<app-task></app-task>
-<app-task></app-task>
-<app-task></app-task>
-<app-task></app-task>
-<app-task></app-task>
-<app-task></app-task>
-<app-task></app-task>
+<div class="tasks-list-Container" *ngFor="let task of tasks">
+	<app-taks [task]="task" (evento)="deleteTaks($event)"></app-taks>
+</div>

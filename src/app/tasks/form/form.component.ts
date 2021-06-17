@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewTask } from 'src/app/interfaces/task.interface';
 import { TasksService } from '../tasks.service';
 
 @Component({
@@ -6,10 +7,8 @@ import { TasksService } from '../tasks.service';
 	templateUrl: './form.component.html',
 	styleUrls: ['./form.component.scss'],
 })
-
-//interfaz de datos de la task
 export class FormComponent implements OnInit {
-	formData: any = {}; //definir interfaz de datos de task
+	formData: NewTask; //definir interfaz de datos de task
 
 	constructor(private taskService: TasksService) {}
 
