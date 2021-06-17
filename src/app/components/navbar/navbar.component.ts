@@ -7,13 +7,16 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  loggedUser:any= null;
   showNavBar:boolean=false
-  constructor(private authService : AuthService) { }
+  constructor(private authService : AuthService) {   }
 
   toggleNavBar(){
     this.showNavBar = !this.showNavBar
   }
   logOut(){
     this.authService.logOut()
+    this.showNavBar = !this.showNavBar
+    
   }
 }

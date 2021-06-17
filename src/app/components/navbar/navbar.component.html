@@ -10,7 +10,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <a href="#" class="nav-logo">NX - Agenda</a>
+        <p *ngIf="loggedUser" class="nav-logo">{{loggedUser.email}}</p>
         <ul [ngClass]="showNavBar ? 'nav-menu' : 'hidden'">
             <li class="nav-item">
                 <a routerLink="home" class="nav-link">Home</a>
