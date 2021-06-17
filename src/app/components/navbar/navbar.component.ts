@@ -12,5 +12,8 @@ export class NavbarComponent {
   toggleNavBar(){
     this.showNavBar = !this.showNavBar
   }
-
+  logOut(){
+   // localStorage.clear()
+   //ejecutar una funcion del servicio de auth que vuelva a null o vacio el loogedUser
+  }
 }
