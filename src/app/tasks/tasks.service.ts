@@ -15,8 +15,10 @@ export class TasksService {
 	}
 
 	postTask(task: any) {
+		const userId = task.userId;
+		delete task.userId;
 		return this.http.post(
-			'https://organizateunpoco.herokuapp.com/api/tasks',
+			`https://organizateunpoco.herokuapp.com/api/tasks/?userId=${userId}`,
 			task
 		);
 	}

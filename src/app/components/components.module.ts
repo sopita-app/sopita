@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormComponent } from '../tasks/form/form.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -11,10 +11,12 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule,
   ],
   exports: [
     NavbarComponent
-  ]
+  ],
+  entryComponents: [FormComponent]
 })
 export class NavBarModule { }
