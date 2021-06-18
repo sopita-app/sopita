@@ -3,7 +3,38 @@
     <button class="content-nav-btn">Añadir tarea</button>
 </div> -->
 
-<header class="header">
+<p>
+    <mat-toolbar class="matToolbar">
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon (click)="toggleNavBar()">menu</mat-icon>
+    </button>
+    <span class="navTitle">Naranja X Agenda</span>
+    <!-- ----------------- INICIO MENU DESPLEGABLE ---------------- -->
+    <ul [ngClass]="showNavBar ? 'nav-menu' : 'hidden'">
+        <li class="nav-item">
+            <a routerLink="home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="openDialog()">Nueva tarea</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="auth/login" routerLinkActive="router-link-active" class="nav-link">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="auth/register" routerLinkActive="router-link-active" class="nav-link">Registrate</a>
+        </li>
+        <li class="nav-item">
+            <p (click)="logOut()" class="nav-link">Cerrar Sesión</p>
+        </li>
+    </ul>
+    <!-- ----------------- FIN MENU DESPLEGABLE ---------------- -->
+
+    
+
+    </mat-toolbar>
+</p>
+<!-- <header class="header">
     <nav class="navbar">
         <div class="hamburger" (click)="toggleNavBar()">
             <span class="bar"></span>
@@ -29,4 +60,4 @@
             </li>
         </ul>
     </nav>
-</header>
+</header> -->

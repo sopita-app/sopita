@@ -9,6 +9,7 @@ import { FormComponent } from '../../tasks/form/form.component';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
+
 export class NavbarComponent {
   showNavBar:boolean=false
   constructor(private authService: AuthService, public dialog: MatDialog) {}
