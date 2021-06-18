@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { NavBarModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     NavBarModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   
   ],
   providers: [],

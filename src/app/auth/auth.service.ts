@@ -3,9 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import * as interfaces from '../interfaces/user.interface';
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
   user: any = {};
@@ -30,6 +33,27 @@ export class AuthService {
 
       });
   }
+
+  signUp(user: interfaces.SignUpUser) {
+    this.http
+      .post<any>('https://organizateunpoco.herokuapp.com/api/user/signup', user)
+      .pipe(
+        map((res) => res.response),
+        // tap(
+        //   res => localStorage.setItem('user', res.token)
+        // )
+        )
+      .subscribe((user) => {
+        // this.loggedUser = user
+        console.log(user)
+        //redirectionarrrr
+        if(user._id){
+          this.router.navigate(['./home'])
+        }
+
+      });
+  }
+
   logOut(){
     this.loggedUser = null
     localStorage.clear()
