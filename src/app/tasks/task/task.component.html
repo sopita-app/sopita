@@ -1,5 +1,14 @@
-<h3>Esto va a ser una tarea</h3>
-
-<div style="justify-content: center">
-	<button (click)="removeTask()">ELIMINAR</button>
+<div class="container">
+	<h3 class="taskTitle">{{ [task].title }}</h3>
+	<h4 class="taskDate">{{ [task].date }}</h4>
+	<h4 class="taskHour">{{ task.time }}</h4>
+	<p class="taskDescription">
+		{{ task.description }}
+	</p>
+	<div class="buttonDiv">
+		<button class="buttonDone button">Hecho</button>
+		<button class="buttonDelete button" (click)="removeTask(task._id)">
+			Eliminar
+		</button>
+	</div>
 </div>

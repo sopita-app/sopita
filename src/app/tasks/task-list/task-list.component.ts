@@ -7,7 +7,7 @@ import { TasksService } from '../tasks.service';
 	styleUrls: ['./task-list.component.scss'],
 })
 export class TaskListComponent {
-	tasks: [] = [];
+	tasks: any = [];
 	newTask: any = {};
 
 	constructor(private taskService: TasksService) {
@@ -15,6 +15,12 @@ export class TaskListComponent {
 		this.taskService.getTasks().subscribe((data: any) => {
 			console.log(data.response);
 			this.tasks = data.response;
+		});
+	}
+
+	deleteTask(id: string) {
+		this.taskService.deleteTask(id).subscribe((data) => {
+			this.tasks = this.tasks.filter((tarea: any) => tarea._id !== id);
 		});
 	}
 }

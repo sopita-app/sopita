@@ -11,17 +11,11 @@ export class TaskComponent implements OnInit {
 	@Input() task: any;
 	@Output() evento: any = new EventEmitter();
 
-	constructor(private taskService: TasksService) {}
+	constructor() {}
 
 	ngOnInit(): void {}
 
-	removeTask() {
-		this.taskService
-			.deleteTask('60cbbbc09ed06c0015de6d53')
-			.subscribe((data: any) => {
-				this.task.filter(
-					(tarea: any) => tarea._id !== data.response._id
-				);
-			});
+	removeTask(id: string) {
+		this.evento.emit(id);
 	}
 }
