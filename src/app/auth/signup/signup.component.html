@@ -4,14 +4,14 @@
     </div>
     <div class="login-form">
         <h3>Nombre:</h3>
-        <input type="text" placeholder="Username" /><br />
+        <input type="text" placeholder="Nombre" [(ngModel)]='user.name' /><br />
         <h3>Apellido:</h3>
-        <input type="text" placeholder="Username" /><br />
+        <input type="text" placeholder="Apellido" [(ngModel)]='user.lastname'/><br />
         <h3>Email:</h3>
-        <input type="text" placeholder="Username" /><br />
+        <input type="text" placeholder="Email" [(ngModel)]='user.email'/><br />
         <h3>Contraseña:</h3>
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Contraseña" [(ngModel)]='user.password'/>
         <br />
-        <input type="button" value="Enviar" class="login-button" />
+        <input type="button" value="Enviar" class="login-button" (click)="signUp()"/>
     </div>
 </div>

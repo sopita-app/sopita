@@ -7,6 +7,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { HttpClientModule } from '@angular/common/http'
 import { NavBarModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     TasksModule,
     HttpClientModule,
     NavBarModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   
   ],
   providers: [],
