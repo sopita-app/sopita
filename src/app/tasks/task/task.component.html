@@ -1,10 +1,14 @@
 <div class="container">
-    <h3 class="taskTitle">Titulo</h3>
-    <h4 class="taskDate">17/06</h4>
-    <h4 class="taskHour">17:00</h4>
-    <p class="taskDescription">Descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion</p>
+    <h3 class="taskTitle">{{eachTask.title}}</h3>
+    <h4 class="taskDate">{{eachTask.date | date}}</h4>
+    <h4 class="taskHour">{{eachTask.time}}</h4>
+    <p class="taskDescription">
+        {{eachTask.description}}
+    </p>
     <div class="buttonDiv">
         <button class="buttonDone button">Hecho</button>
-        <button class="buttonDelete button">Eliminar</button>
+        <button class="buttonDelete button" (click)="removeTask(eachTask._id)">
+            Eliminar
+        </button>
     </div>
 </div>

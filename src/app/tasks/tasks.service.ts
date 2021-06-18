@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
 	providedIn: 'root',
 })
-
 export class TasksService {
 	constructor(private http: HttpClient) {}
 
@@ -21,9 +20,9 @@ export class TasksService {
 		);
 	}
 
-	deleteTask(id: string) {
-		return this.http.get(
-			'https://organizateunpoco.herokuapp.com/api/tasks' + id
+	deleteTask(id: any) {
+		return this.http.delete(
+			'https://organizateunpoco.herokuapp.com/api/task/' + id
 		);
 	}
 }
