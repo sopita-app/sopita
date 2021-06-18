@@ -25,6 +25,7 @@ export class FormComponent{
 		
 		// this.authService.loggedUser._id
 		this.taskService.postTask({task: this.formData, userId: '60c61015724b960015415b47'}).subscribe((res: any) => {
+			console.log(res)
 			if(res.success){
 				this.router.navigate(['./home']);
 			}
