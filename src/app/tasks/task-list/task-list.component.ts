@@ -6,16 +6,20 @@ import { TasksService } from '../tasks.service';
 	templateUrl: './task-list.component.html',
 	styleUrls: ['./task-list.component.scss'],
 })
-export class TaskListComponent implements OnInit {
-	tasks: [] = [];
-	newTask: any = {};
+export class TaskListComponent {
+	tasks: any = [];
 
 	constructor(private taskService: TasksService) {
 		//creo que es asi, mañana sigo viendo y lo pruebo
 		this.taskService.getTasks().subscribe((data: any) => {
+			console.log(data.response);
 			this.tasks = data.response;
 		});
 	}
 
-	ngOnInit(): void {}
+	deleteTask(id: string) {
+		this.taskService.deleteTask(id).subscribe((data) => {
+			this.tasks = this.tasks.filter((tarea: any) => tarea._id !== id);
+		});
+	}
 }
