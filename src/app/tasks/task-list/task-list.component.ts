@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 import { TasksService } from '../tasks.service';
 
 @Component({
@@ -9,11 +10,16 @@ import { TasksService } from '../tasks.service';
 export class TaskListComponent {
 	tasks: any = [];
 
-	constructor(private taskService: TasksService) {
+	constructor(
+		private taskService: TasksService,
+		private authService: AuthService
+	) {
 		//creo que es asi, mañana sigo viendo y lo pruebo
 		this.taskService.getTasks().subscribe((data: any) => {
-			console.log(data.response);
-			this.tasks = data.response;
+			this.tasks = data.response.filter(
+				(tarea: any) =>
+					tarea.userId.email === authService.loggedUser.email
+			);
 		});
 	}
 
