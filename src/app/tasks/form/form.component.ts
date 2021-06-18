@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NewTask } from 'src/app/interfaces/task.interface';
+import { AuthService } from 'src/app/auth/auth.service';
 import { TasksService } from '../tasks.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-form',
@@ -8,16 +10,32 @@ import { TasksService } from '../tasks.service';
 	styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-	formData: NewTask; //definir interfaz de datos de task
+	formData: any = {
+		title: '',
+		description: '',
+		date: '',
+		time: '',
+	}; //definir interfaz de datos de task
 
-	constructor(private taskService: TasksService) {}
+	constructor(
+		private taskService: TasksService,
+		private authService: AuthService,
+		private router: Router
+	) {}
 
-	addTask(tarea: any) {
+	addTask() {
 		//usamos esta funcion para recibir los datos del formulario y accionar la creacion de la tarea al backend
-
-		this.formData = tarea; //seteamos la variable con los datos
-
-		this.taskService.postTask(this.formData); // ejecutamos la creacion de la tarea con los datos en la variable
+		// ejecutamos la creacion de la tarea con los datos en la variable
+		this.taskService
+			.postTask({
+				task: this.formData,
+				userId: this.authService.loggedUser._id,
+			})
+			.subscribe((res: any) => {
+				if (res.success) {
+					this.router.navigate(['./home']);
+				}
+			});
 	}
 
 	ngOnInit(): void {}

@@ -13,7 +13,7 @@ export class TasksService {
 		);
 	}
 
-	postTask(task) {
+	postTask(task: any) {
 		return this.http.post(
 			'https://organizateunpoco.herokuapp.com/api/tasks',
 			task

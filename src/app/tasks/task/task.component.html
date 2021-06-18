@@ -1,6 +1,6 @@
 <div class="container">
-	<h3 class="taskTitle">{{ [task].title }}</h3>
-	<h4 class="taskDate">{{ [task].date }}</h4>
+	<h3 class="taskTitle">{{ task.title }}</h3>
+	<h4 class="taskDate">{{ task.date | date }}</h4>
 	<h4 class="taskHour">{{ task.time }}</h4>
 	<p class="taskDescription">
 		{{ task.description }}
