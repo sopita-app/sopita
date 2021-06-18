@@ -14,6 +14,10 @@ export class AuthService {
   user: any = {};
   loggedUser: any;
   
+  options:{
+
+  }
+
   signIn(user: any) {
     this.http
       .post<any>('https://organizateunpoco.herokuapp.com/api/user/signin', user)
@@ -70,4 +74,15 @@ export class AuthService {
     }
   }
 
+  logFromLS(token){
+    this.http.post<any>('https://organizateunpoco.herokuapp.com/api/user/preserve', {token}, {
+      headers:{
+        Authorization: 'Bearer ' + token
+    }
+    }).pipe(
+      map(res => res.response)
+    ).subscribe( user => {
+      this.loggedUser = user
+    })
+  }
 }
