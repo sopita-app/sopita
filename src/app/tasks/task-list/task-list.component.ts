@@ -18,7 +18,7 @@ export class TaskListComponent {
 		this.taskService.getTasks().subscribe((data: any) => {
 			this.tasks = data.response.filter(
 				(tarea: any) =>
-					tarea.userId.email === authService.loggedUser.email
+					tarea.userId.email === this.authService.loggedUser?.email
 			);
 		});
 	}

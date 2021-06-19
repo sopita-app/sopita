@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { FormComponent } from '../../tasks/form/form.component';
 
@@ -13,16 +14,14 @@ export class NavbarComponent implements OnInit {
   showNavBar:boolean=false
 
   loggedUser:any;
-  isLogged:boolean;
+  isLogged:Observable<boolean>;
 
 
   constructor(private authService: AuthService, public dialog: MatDialog) {
   }
   
   ngOnInit(){
-    this.authService.loginStatus.subscribe(res=>{
-      this.isLogged = res
-    })
+     this.isLogged = this.authService.checkLoginStatus()
   }
   
   openDialog() {
@@ -34,7 +33,6 @@ export class NavbarComponent implements OnInit {
   }
   
   logOut(){
-    this.authService.loginStatus.next(false)
     this.showNavBar = !this.showNavBar
    this.authService.logOut()
   }

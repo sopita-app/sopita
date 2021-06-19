@@ -12,7 +12,7 @@ import * as interfaces from '../interfaces/user.interface';
 export class AuthService {
   user: any = {};
   loggedUser: any;
-  public loginStatus = new BehaviorSubject<boolean>(this.checkLoginStatus());
+  public loginStatus = new BehaviorSubject<boolean>(false);
   public get auth(){
     return this.loggedUser
   }
@@ -23,9 +23,7 @@ export class AuthService {
   }
 
   checkLoginStatus(){
-    if(localStorage.getItem('user')){
-      return true
-    }
+    return this.loginStatus.asObservable()
   }
 
   signIn(user: any) {
@@ -36,12 +34,13 @@ export class AuthService {
         tap(
           res => localStorage.setItem('user', res.token)
         )
-        )
-      .subscribe((user) => {
-        this.loggedUser = user
-        console.log(user)
-        //redirectionarrrr
-        if(user._id){
+          )
+          .subscribe((user) => {
+            this.loggedUser = user
+            console.log(user)
+            //redirectionarrrr
+            if(user._id){
+          this.loginStatus.next(true)
           this.router.navigate(['./home'])
         }
         
@@ -63,7 +62,6 @@ export class AuthService {
         //redirectionarrrr
         if(user._id){
           this.router.navigate(['./home'])
-          this.loginStatus.next(true)
         }
       });
   }
@@ -72,7 +70,7 @@ export class AuthService {
     this.loggedUser = null
     localStorage.clear()
     this.router.navigate(['./auth/login'])
-
+    this.loginStatus.next(false)
   }
 
   verificaAutenticacion(){
