@@ -15,12 +15,17 @@ export class TaskListComponent {
 		private authService: AuthService
 	) {
 		//creo que es asi, mañana sigo viendo y lo pruebo
-		this.taskService.getTasks().subscribe((data: any) => {
-			this.tasks = data.response.filter(
-				(tarea: any) =>
-					tarea.userId.email === this.authService.loggedUser?.email
-			);
-		});
+		this.authService.loginStatus.subscribe(res =>{
+			if(res){
+				this.taskService.getTasks().subscribe((data: any) => {
+					this.tasks = data.response.filter(
+						(tarea: any) =>
+							tarea.userId.email === this.authService.loggedUser?.email
+					);
+				});
+
+			}
+		})
 	}
 
 	deleteTask(id: string) {

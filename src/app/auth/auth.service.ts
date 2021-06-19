@@ -90,6 +90,8 @@ export class AuthService {
     }).pipe(
       map(res => res.response)
     ).subscribe( user => {
+      this.loginStatus.next(true)
+
       this.loggedUser = user
     })
   }
