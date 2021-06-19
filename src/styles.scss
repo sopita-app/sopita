@@ -81,6 +81,7 @@ body {
 	background-size: cover;
 	margin: 0px;
 	padding: 0px;
+	background-attachment: fixed;
 }
 
 html,
@@ -90,4 +91,8 @@ body {
 body {
 	margin: 0;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.body{
+	margin-top: 90px;
 }

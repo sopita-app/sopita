@@ -12,20 +12,20 @@
     <span class="navTitle">Naranja X Agenda</span>
     <!-- ----------------- INICIO MENU DESPLEGABLE ---------------- -->
     <ul [ngClass]="showNavBar ? 'nav-menu' : 'hidden'">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="(isLogged | async)">
             <a routerLink="home" class="nav-link">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="(isLogged | async)">
             <a class="nav-link" (click)="openDialog()">Nueva tarea</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!(isLogged | async)">
             <a routerLink="auth/login" routerLinkActive="router-link-active" class="nav-link">Iniciar Sesión</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!(isLogged | async)">
             <a routerLink="auth/register" routerLinkActive="router-link-active" class="nav-link">Registrate</a>
         </li>
         <li class="nav-item">
-            <p (click)="logOut()" class="nav-link">Cerrar Sesión</p>
+            <p (click)="logOut()" class="nav-link" *ngIf="(isLogged | async)">Cerrar Sesión</p>
         </li>
     </ul>
     <!-- ----------------- FIN MENU DESPLEGABLE ---------------- -->
