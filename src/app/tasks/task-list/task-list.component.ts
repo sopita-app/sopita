@@ -18,19 +18,22 @@ export class TaskListComponent {
 		this.authService.loginStatus.subscribe(res =>{
 			if(res){
 				this.taskService.getTasks().subscribe((data: any) => {
-					this.tasks = data.response.filter(
+					this.taskService.tasks = data.response.filter(
 						(tarea: any) =>
 							tarea.userId.email === this.authService.loggedUser?.email
 					);
+					this.tasks = this.taskService.tasks	
 				});
 
 			}
 		})
+
 	}
 
 	deleteTask(id: string) {
 		this.taskService.deleteTask(id).subscribe((data) => {
-			this.tasks = this.tasks.filter((tarea: any) => tarea._id !== id);
+			this.taskService.tasks = this.taskService.tasks.filter((tarea: any) => tarea._id !== id);
+			this.tasks = this.taskService.tasks
 		});
 	}
 }
