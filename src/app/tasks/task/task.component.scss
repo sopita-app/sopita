@@ -1,18 +1,19 @@
-.container{
-    margin: 2em;
-    padding: 1em;
-    background-color: #320A46;
-    border-radius: 20px;
-    color: #fff;
+.container {
+	margin: 2em;
+	padding: 1em;
+	width: 260px;
+	background-color: #320a46;
+	border-radius: 20px;
+	color: #fff;
 }
 
-.buttonDiv{
-    display: flex;
-    justify-content: center;
+.buttonDiv {
+	display: flex;
+	justify-content: center;
 }
 
-.button{
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
+.button {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
 }
