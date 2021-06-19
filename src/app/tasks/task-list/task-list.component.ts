@@ -39,4 +39,12 @@ export class TaskListComponent {
 			this.tasks = this.taskService.tasks
 		});
 	}
+	taskToDone(id){
+		this.taskService.taskstatus(id)
+		.subscribe((data:any) =>{
+		  console.log(data)
+		  this.tasks = this.tasks.map(task => task._id === id ? data.response : task)
+		})
+	  }
+  
 }

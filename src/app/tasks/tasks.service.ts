@@ -27,4 +27,7 @@ export class TasksService {
 			'https://organizateunpoco.herokuapp.com/api/task/' + id
 		);
 	}
+	taskstatus(id){
+		return this.http.post('https://organizateunpoco.herokuapp.com/api/task/'+id, id)
+	  }
 }

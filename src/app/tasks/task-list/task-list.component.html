@@ -1,7 +1,7 @@
 <div *ngIf="!loading; else loader">
 
 	<div class="tasks-list-Container" *ngFor="let task of tasks">
-		<app-task [eachTask]="task" (evento)="deleteTask($event)"></app-task>
+		<app-task [eachTask]="task" (evento)="deleteTask($event)" (update)="taskToDone($event)"></app-task>
 	</div>
 </div>
 <ng-template #loader>
