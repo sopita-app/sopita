@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormComponent } from '../tasks/form/form.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatDialogModule,
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   entryComponents: [FormComponent]
 })

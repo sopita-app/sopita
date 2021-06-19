@@ -1,0 +1,28 @@
+footer {
+	background-color: transparent;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	border-top: 1px solid white;
+}
+
+ul {
+	display: flex;
+	justify-content: center;
+	aling-items: center;
+}
+
+a {
+	margin: 10px;
+	font-size: 20px;
+	cursor: pointer;
+	list-style: none;
+	color: white;
+}
+
+.copy {
+	display: flex;
+	justify-content: center;
+	aling-items: center;
+}
