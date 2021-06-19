@@ -3,10 +3,8 @@
   display: flex;
   flex-direction: column;
   width: 500px;
-  &-header {
-    color: #fff;
-    text-align: center;
-    font-size: 300%;
+  .close-button {
+    float: right;
   }
   &-form {
     border: 0.5px solid #fff;

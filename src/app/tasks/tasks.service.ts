@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 	providedIn: 'root',
 })
 export class TasksService {
+	tasks: any[] ;
+
 	constructor(private http: HttpClient) {}
 
 	getTasks() {

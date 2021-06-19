@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { Router } from '@angular/router';
 import * as interfaces from '../interfaces/user.interface';
 
@@ -10,12 +10,20 @@ import * as interfaces from '../interfaces/user.interface';
 })
 
 export class AuthService {
-  constructor(private http: HttpClient, private router: Router) {}
   user: any = {};
   loggedUser: any;
-  
-  options:{
+  public loginStatus = new BehaviorSubject<boolean>(false);
+  public get auth(){
+    return this.loggedUser
+  }
+  constructor(private http: HttpClient, private router: Router) {
+    this.loginStatus.subscribe(result =>{
+      console.log(result)
+    })
+  }
 
+  checkLoginStatus(){
+    return this.loginStatus.asObservable()
   }
 
   signIn(user: any) {
@@ -26,15 +34,16 @@ export class AuthService {
         tap(
           res => localStorage.setItem('user', res.token)
         )
-        )
-      .subscribe((user) => {
-        this.loggedUser = user
-        console.log(user)
-        //redirectionarrrr
-        if(user._id){
+          )
+          .subscribe((user) => {
+            this.loggedUser = user
+            console.log(user)
+            //redirectionarrrr
+            if(user._id){
+          this.loginStatus.next(true)
           this.router.navigate(['./home'])
         }
-
+        
       });
   }
 
@@ -54,7 +63,6 @@ export class AuthService {
         if(user._id){
           this.router.navigate(['./home'])
         }
-
       });
   }
 
@@ -62,7 +70,7 @@ export class AuthService {
     this.loggedUser = null
     localStorage.clear()
     this.router.navigate(['./auth/login'])
-
+    this.loginStatus.next(false)
   }
 
   verificaAutenticacion(){
@@ -82,6 +90,8 @@ export class AuthService {
     }).pipe(
       map(res => res.response)
     ).subscribe( user => {
+      this.loginStatus.next(true)
+
       this.loggedUser = user
     })
   }
