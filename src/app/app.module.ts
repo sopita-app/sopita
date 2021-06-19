@@ -23,8 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavBarModule,
     RouterModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
-  
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

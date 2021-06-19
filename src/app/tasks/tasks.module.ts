@@ -5,9 +5,10 @@ import { FormComponent } from './form/form.component';
 import { TaskComponent } from './task/task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TasksRoutingModule } from './task-routing.module';
-import { TaskNewComponent } from './task-new/task-new.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -15,20 +16,20 @@ import { MatButtonModule } from '@angular/material/button';
     FormComponent,
     TaskComponent,
     TaskListComponent,
-    TaskNewComponent
   ],
   imports: [
     CommonModule,
     TasksRoutingModule,
     FormsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   exports: [
     FormComponent,
     TaskComponent,
     TaskListComponent,
-    TaskNewComponent
   ],
 })
 export class TasksModule { }
