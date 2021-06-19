@@ -25,6 +25,7 @@ export class SigninComponent{
 
   signIn(){
     this.authService.signIn(this.user)
+    this.authService.loginStatus.next(true)
     }
   
 

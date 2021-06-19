@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { Router } from '@angular/router';
 import * as interfaces from '../interfaces/user.interface';
 
@@ -10,12 +10,22 @@ import * as interfaces from '../interfaces/user.interface';
 })
 
 export class AuthService {
-  constructor(private http: HttpClient, private router: Router) {}
   user: any = {};
   loggedUser: any;
-  
-  options:{
+  public loginStatus = new BehaviorSubject<boolean>(this.checkLoginStatus());
+  public get auth(){
+    return this.loggedUser
+  }
+  constructor(private http: HttpClient, private router: Router) {
+    this.loginStatus.subscribe(result =>{
+      console.log(result)
+    })
+  }
 
+  checkLoginStatus(){
+    if(localStorage.getItem('user')){
+      return true
+    }
   }
 
   signIn(user: any) {
@@ -34,7 +44,7 @@ export class AuthService {
         if(user._id){
           this.router.navigate(['./home'])
         }
-
+        
       });
   }
 
@@ -53,8 +63,8 @@ export class AuthService {
         //redirectionarrrr
         if(user._id){
           this.router.navigate(['./home'])
+          this.loginStatus.next(true)
         }
-
       });
   }
 
