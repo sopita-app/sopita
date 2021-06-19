@@ -13,13 +13,15 @@ export class TaskListComponent {
 		//creo que es asi, mañana sigo viendo y lo pruebo
 		this.taskService.getTasks().subscribe((data: any) => {
 			console.log(data.response);
-			this.tasks = data.response;
+			this.taskService.tasks = data.response
+			this.tasks = this.taskService.tasks
 		});
 	}
 
 	deleteTask(id: string) {
 		this.taskService.deleteTask(id).subscribe((data) => {
-			this.tasks = this.tasks.filter((tarea: any) => tarea._id !== id);
+			this.taskService.tasks = this.taskService.tasks.filter((tarea: any) => tarea._id !== id);
+			this.tasks = this.taskService.tasks
 		});
 	}
 }
