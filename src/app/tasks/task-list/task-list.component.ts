@@ -25,7 +25,6 @@ export class TaskListComponent {
 					);
 					this.loading = false
 					this.tasks = this.taskService.tasks	
-
 				});
 
 			}
@@ -43,7 +42,8 @@ export class TaskListComponent {
 		this.taskService.taskstatus(id)
 		.subscribe((data:any) =>{
 		  console.log(data)
-		  this.tasks = this.tasks.map(task => task._id === id ? data.response : task)
+		  this.taskService.tasks = this.tasks.map(task => task._id === id ? data.response : task)
+		  this.tasks = this.taskService.tasks
 		})
 	  }
   
