@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { NewTask } from 'src/app/interfaces/task.interface';
 import { AuthService } from 'src/app/auth/auth.service';
 import { TasksService } from '../tasks.service';
-import { Router } from '@angular/router';
+
 
 @Component({
 	selector: 'app-form',
@@ -20,7 +20,6 @@ export class FormComponent  {
 	constructor(
 		private taskService: TasksService,
 		private authService: AuthService,
-		private router: Router
 	) {}
 
 	addTask() {
@@ -29,10 +28,8 @@ export class FormComponent  {
 		
 		// this.authService.loggedUser._id
 		this.taskService.postTask({task: this.formData, userId: this.authService.loggedUser._id}).subscribe((res: any) => {
-			console.log(res)
 			if(res.success){
-				this.taskService.tasks.push(this.formData)
-				this.router.navigate(['./home']);
+				this.taskService.tasks.push(res.response)
 			}
 		}) 
 	}
