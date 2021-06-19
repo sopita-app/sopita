@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
   }
   
   openDialog() {
-		this.dialog.open(FormComponent);
+		this.dialog.open(FormComponent, {width: '600px',});
 	}
   
   toggleNavBar(){
