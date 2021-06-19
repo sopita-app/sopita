@@ -1,3 +1,12 @@
-<div class="tasks-list-Container" *ngFor="let task of tasks">
-	<app-task [eachTask]="task" (evento)="deleteTask($event)"></app-task>
+<div *ngIf="!loading; else loader">
+
+	<div class="tasks-list-Container" *ngFor="let task of tasks">
+		<app-task [eachTask]="task" (evento)="deleteTask($event)"></app-task>
+	</div>
 </div>
+<ng-template #loader>
+	<div class="spinnerContainer">
+		<app-fulfilling-bouncing-circle-spinner [animationDuration]="4000" [size]="60" [color]="'#320A46'">
+		</app-fulfilling-bouncing-circle-spinner>
+	</div>
+</ng-template>
