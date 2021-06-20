@@ -50,6 +50,10 @@
     outline: none;
     padding-left: 10px;
   }
+  input[type="button" i]:disabled {
+    background-color: rgba(0,0,0,.12);
+    color: rgba(0,0,0,.26);
+  }
 }
 
 /*Media Querie*/
