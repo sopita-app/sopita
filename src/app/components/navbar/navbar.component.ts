@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   }
   
   ngOnInit(){
-     this.isLogged = this.authService.checkLoginStatus()
+     this.isLogged = this.authService.checkLoginStatus();
   }
   
   openDialog() {
@@ -29,11 +29,11 @@ export class NavbarComponent implements OnInit {
 	}
   
   toggleNavBar(){
-    this.showNavBar = !this.showNavBar
+    this.showNavBar = !this.showNavBar;
   }
   
   logOut(){
-    this.showNavBar = !this.showNavBar
-   this.authService.logOut()
+    this.showNavBar = !this.showNavBar;
+    this.authService.logOut();
   }
 }

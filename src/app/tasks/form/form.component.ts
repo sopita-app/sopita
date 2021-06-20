@@ -27,11 +27,11 @@ export class FormComponent  {
 		//usamos esta funcion para recibir los datos del formulario y accionar la creacion de la tarea al backend
 		// ejecutamos la creacion de la tarea con los datos en la variable
 		
-		this.taskService.postTask({task: this.formData, userId: this.authService.loggedUser._id}).subscribe((res: any) => {
+		/*this.taskService.postTask({task: this.formData, userId: this.authService.loggedUser._id}).subscribe((res: any) => {
 			if(res.success){
 				this._snackBar.open('Tarea agregada con éxito', 'Ok', {duration: 1500});
 				this.taskService.tasks.push(res.response)
 			}
-		}) 
+		})*/ 
 	}
 }

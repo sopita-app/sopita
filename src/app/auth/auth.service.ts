@@ -32,9 +32,10 @@ export class AuthService {
       .pipe(
         map((res) => res.response),
         tap(
-          res => localStorage.setItem('user', res.token)
-        )
-          )
+          res => {
+            localStorage.setItem('user', res.token);
+          }
+        ))
           .subscribe((user) => {
             this.loggedUser = user
             console.log(user)

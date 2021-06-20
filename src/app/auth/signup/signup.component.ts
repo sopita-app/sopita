@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { SignUpUser } from '../../interfaces/user.interface';
-import {MatSnackBar} from '@angular/material/snack-bar';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -21,11 +20,8 @@ export class SignupComponent {
     password: '',
   }
 
-  
-  
   signUp(){
-    this.authService.signUp(this.user)
-    this._snackBar.open('Cuenta creada, inicie sesión', 'Ok',{duration: 1500});
+    this.authService.signUp(this.user);
+    this._snackBar.open('Cuenta creada, inicie sesión', 'Ok', {duration: 1500});
   }
-  
 }
