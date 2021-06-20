@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { map } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/auth.service';
 import { TasksService } from '../tasks.service';
@@ -13,7 +14,8 @@ export class TaskListComponent {
 	loading:boolean=false
 	constructor(
 		private taskService: TasksService,
-		private authService: AuthService
+		private authService: AuthService,
+		private _snackBar: MatSnackBar
 	) {
 		//creo que es asi, mañana sigo viendo y lo pruebo
 		this.authService.loginStatus.subscribe(res =>{
@@ -39,6 +41,7 @@ export class TaskListComponent {
 		this.taskService.deleteTask(id).subscribe((data) => {
 			this.taskService.tasks = this.taskService.tasks.filter((tarea: any) => tarea._id !== id);
 			this.tasks = this.taskService.tasks
+			this._snackBar.open('Eliminaste tu tarea!', 'Ok',  {duration: 1500})
 		});
 	}
 	taskToDone(id:string){
@@ -50,6 +53,8 @@ export class TaskListComponent {
 		  console.log(data)
 		  this.taskService.tasks = this.tasks.map(task => task._id === id ? data : task)
 		  this.tasks = this.taskService.tasks
+		  this._snackBar.open('Buen trabajo! Tarea completada!', 'Ok',  {duration: 1500})
+
 		})
 	  }
   

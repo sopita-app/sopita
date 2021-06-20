@@ -22,6 +22,6 @@ export class SigninComponent{
   }
 
   signIn(){
-    this.authService.signIn(this.user);
+    this.authService.signIn(this.user)
   }
 }
