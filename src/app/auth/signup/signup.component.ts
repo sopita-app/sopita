@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class SignupComponent {
 
-  constructor(private authService: AuthService, private _snackBar: MatSnackBar) { }
+  constructor(private authService: AuthService) { }
 
   user: SignUpUser = {
     name: '',
@@ -22,6 +22,5 @@ export class SignupComponent {
 
   signUp(){
     this.authService.signUp(this.user);
-    this._snackBar.open('Cuenta creada, inicie sesión', 'Ok', {duration: 1500});
   }
 }

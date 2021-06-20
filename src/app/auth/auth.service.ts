@@ -62,11 +62,11 @@ export class AuthService {
         // )
         )
       .subscribe((user) => {
-        // this.loggedUser = user
-        console.log(user)
-        //redirectionarrrr
         if(user._id){
+          this.snackBar.open('Cuenta creada, inicie sesión', 'Ok', {duration: 2000});
           this.router.navigate(['./home'])
+        }else{
+          this.snackBar.open('Probá con otro mail!', 'Oops', {duration: 2000});
         }
       });
   }
