@@ -4,31 +4,56 @@
 </div> -->
 
 <mat-toolbar class="matToolbar">
-    <div>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon (click)="toggleNavBar()">menu</mat-icon>
-        </button>
-        <span class="navTitle">Naranja X Agenda</span>
-    </div>
-    <!-- ----------------- INICIO MENU DESPLEGABLE ---------------- -->
-    <!-- ----------------- FIN MENU DESPLEGABLE ---------------- -->
+	<div>
+		<button
+			mat-icon-button
+			class="example-icon"
+			aria-label="Example icon-button with menu icon"
+		>
+			<mat-icon (click)="toggleNavBar()">menu</mat-icon>
+		</button>
+		<span class="navTitle">Naranja X Agenda</span>
+	</div>
+	<!-- ----------------- INICIO MENU DESPLEGABLE ---------------- -->
+	<!-- ----------------- FIN MENU DESPLEGABLE ---------------- -->
 </mat-toolbar>
 <ul [ngClass]="showNavBar ? 'nav-menu' : 'hidden'">
-    <li class="nav-item" *ngIf="(isLogged | async)">
-        <a routerLink="home" class="nav-link">Home</a>
-    </li>
-    <li class="nav-item" *ngIf="(isLogged | async)">
-        <a class="nav-link" (click)="openDialog()">Nueva tarea</a>
-    </li>
-    <li class="nav-item" *ngIf="!(isLogged | async)">
-        <a routerLink="auth/login" routerLinkActive="router-link-active" class="nav-link">Iniciar Sesión</a>
-    </li>
-    <li class="nav-item" *ngIf="!(isLogged | async)">
-        <a routerLink="auth/register" routerLinkActive="router-link-active" class="nav-link">Registrate</a>
-    </li>
-    <li class="nav-item">
-        <p (click)="logOut()" class="nav-link" *ngIf="(isLogged | async)">Cerrar Sesión</p>
-    </li>
+	<li class="nav-item" *ngIf="isLogged | async">
+		<a routerLink="home" class="nav-link" (click)="toggleNavBar()">Home</a>
+	</li>
+	<li class="nav-item" *ngIf="isLogged | async">
+		<a class="nav-link" (click)="openDialog()" (click)="toggleNavBar()"
+			>Nueva tarea</a
+		>
+	</li>
+	<li class="nav-item" *ngIf="!(isLogged | async)">
+		<a
+			(click)="toggleNavBar()"
+			routerLink="auth/login"
+			routerLinkActive="router-link-active"
+			class="nav-link"
+			>Iniciar Sesión</a
+		>
+	</li>
+	<li class="nav-item" *ngIf="!(isLogged | async)">
+		<a
+			(click)="toggleNavBar()"
+			routerLink="auth/register"
+			routerLinkActive="router-link-active"
+			class="nav-link"
+			>Registrate</a
+		>
+	</li>
+	<li class="nav-item">
+		<p
+			(click)="logOut()"
+			class="nav-link"
+			*ngIf="isLogged | async"
+			(click)="toggleNavBar()"
+		>
+			Cerrar Sesión
+		</p>
+	</li>
 </ul>
 <!-- <header class="header">
     <nav class="navbar">
