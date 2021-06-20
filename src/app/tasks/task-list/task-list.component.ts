@@ -50,7 +50,6 @@ export class TaskListComponent {
 			map((res:any)=>res.response)
 		)
 		.subscribe((data:any) =>{
-		  console.log(data)
 		  this.taskService.tasks = this.tasks.map(task => task._id === id ? data : task)
 		  this.tasks = this.taskService.tasks
 		  this._snackBar.open('Buen trabajo! Tarea completada!', 'Ok',  {duration: 1500})
