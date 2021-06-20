@@ -1,29 +1,14 @@
 footer {
 	background-color: transparent;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
-	background-color: #320a46;
+	height: 70px;
+	background-color: #1c1c1c;
 	border-top: 1px solid white;
-}
-
-ul {
 	display: flex;
 	justify-content: center;
-	aling-items: center;
-}
-
-a {
-	margin: 10px;
-	font-size: 20px;
-	cursor: pointer;
-	list-style: none;
+	align-items: center;
 	color: white;
-}
-
-.copy {
-	display: flex;
-	justify-content: center;
-	aling-items: center;
-	color: white;
+	font-weight: 500;
 }

@@ -1,3 +1,13 @@
+<div class="textBox">
+	<div>
+		<h3>¡Hola!</h3>
+		<h3>¿Con ganas de distrutar <br/> y apovechar tu tiempo?</h3>
+		<p>Organizate para empezar</p>
+	</div>
+	<div>
+		<img src="../../../assets/home-naranja-x.png"/>
+	</div>
+</div>
 <div class="tasks-list-Container" *ngIf="!loading; else loader">
 	<div *ngFor="let task of tasks">
 		<app-task
@@ -17,8 +27,5 @@
 		</app-fulfilling-bouncing-circle-spinner>
 	</div>
 </ng-template>
-<div *ngIf="!tasks.length && !loading" class="textBox">
-	<h2>No tenes tareas</h2>
-	<h3>¿Hiciste todo o es pura vagancia?</h3>
-	<p>Vos fijate...</p>
-</div>
+
+

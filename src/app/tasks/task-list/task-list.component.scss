@@ -10,7 +10,15 @@
 	margin-top: 5rem;
 }
 .textBox {
-	text-align: center;
-	margin-top: 5rem;
-	color: aliceblue;
+	//text-align: center;
+	margin-top: 7rem;
+	color: #333;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	div {
+		h3 {
+			font-size: 32px;
+		}
+	}
 }

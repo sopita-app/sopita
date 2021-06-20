@@ -8,15 +8,34 @@
 
 .matToolbar {
 	position: fixed;
+	align-items: center;
+	height: 100px;
+	padding: 40px;
 	top: 0;
-	background-color: #320a46;
-	color: #fff;
+	background-color: white;
+	color: black;
+	box-shadow: 0 1px 7px rgb(0 0 0 / 12%);
+	.navbar-container {
+		width: 100%;
+	}
+}
+
+.material-icons {
+	font-size: 42px;
+	line-height: 1.2;
+	display: flex;
+	align-items: center;
 }
 
 .example-icon {
 	background-color: transparent;
 	border: transparent;
-	color: #fff;
+	color: #50007f;
+	float: right;
+}
+
+.nav-img {
+	width: 150px;
 }
 
 .nav-menu {
@@ -34,6 +53,7 @@
 	border-radius: 0 0 6px 0;
 	min-width: 300px;
 	cursor: pointer;
+	right: 0px;
 }
 
 .nav-item {
