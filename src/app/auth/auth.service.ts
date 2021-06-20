@@ -38,12 +38,15 @@ export class AuthService {
           }
         ))
           .subscribe((user) => {
-            this.loggedUser = user
-            this.snackBar.open(`Hola ${user.firstName}!`, ':)', {duration: 2500})
             //redirectionarrrr
             if(user._id){
+              this.loggedUser = user
+              this.snackBar.open(`Hola ${user.firstName}!`, ':)', {duration: 2500})
           this.loginStatus.next(true)
           this.router.navigate(['./home'])
+        }else{
+          this.snackBar.open(user, 'Oops!', {duration: 2000})
+
         }
         
       });
