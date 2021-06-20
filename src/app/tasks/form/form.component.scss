@@ -2,7 +2,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 500px;
+  //width: 500px;
   .close-button {
     float: right;
   }
@@ -19,6 +19,10 @@
     h3 {
       text-align: center;
       margin: 0;
+    }
+    input[type="button" i]:disabled {
+      background-color: rgba(0,0,0,.12);
+      color: rgba(0,0,0,.26);
     }
     input[type="button"] {
       width: 90%;

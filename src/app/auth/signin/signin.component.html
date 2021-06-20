@@ -4,10 +4,30 @@
     </div>
     <div class="login-form">
         <h3>Email:</h3>
-        <input type="text" placeholder="Username" [(ngModel)]="user.email" /><br />
-        <h3>Contraseña:</h3>
-        <input type="password" placeholder="Password" [(ngModel)]="user.password" />
+        <input 
+            required 
+            type="text" 
+            placeholder="Username" 
+            [(ngModel)]="user.email"
+            name="email"
+			id="email"
+			#email="ngModel" />
         <br />
-        <input type="button" value="Iniciar Sesión" class="login-button" (click)="signIn()" />
+        <h3>Contraseña:</h3>
+        <input 
+            required 
+            type="password" 
+            placeholder="Password" 
+            [(ngModel)]="user.password"
+            name="password"
+			id="password"
+			#password="ngModel" />
+        <br />
+        <input 
+            type="button" 
+            value="Iniciar Sesión" 
+            class="login-button" 
+            (click)="signIn()" 
+            [disabled]="email.invalid || password.invalid" />
     </div>
 </div>

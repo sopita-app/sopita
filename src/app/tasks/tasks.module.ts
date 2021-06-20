@@ -9,7 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import {FulfillingBouncingCircleSpinnerModule} from 'angular-epic-spinners'
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FulfillingBouncingCircleSpinnerModule
   ],
   exports: [
     FormComponent,

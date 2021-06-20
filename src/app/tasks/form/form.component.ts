@@ -32,6 +32,6 @@ export class FormComponent  {
 				this._snackBar.open('Tarea agregada con éxito', 'Ok', {duration: 1500});
 				this.taskService.tasks.push(res.response)
 			}
-		}) 
+		})
 	}
 }

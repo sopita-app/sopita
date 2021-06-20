@@ -4,14 +4,51 @@
     </div>
     <div class="login-form">
         <h3>Nombre:</h3>
-        <input type="text" placeholder="Nombre" [(ngModel)]='user.name' /><br />
+        <input 
+            required
+            type="text" 
+            placeholder="Nombre" 
+            [(ngModel)]="user.name"
+            name="name"
+			id="name"
+			#name="ngModel"
+        /><br />
         <h3>Apellido:</h3>
-        <input type="text" placeholder="Apellido" [(ngModel)]='user.lastname'/><br />
+        <input 
+            required
+            type="text" 
+            placeholder="Apellido" 
+            [(ngModel)]="user.lastname"
+            name="lastname"
+			id="lastname"
+			#lastname="ngModel"
+        /><br />
         <h3>Email:</h3>
-        <input type="text" placeholder="Email" [(ngModel)]='user.email'/><br />
+        <input 
+            required
+            type="text" 
+            placeholder="Email" 
+            [(ngModel)]="user.email"
+            name="email"
+			id="email"
+			#email="ngModel"
+        /><br />
         <h3>Contraseña:</h3>
-        <input type="password" placeholder="Contraseña" [(ngModel)]='user.password'/>
+        <input 
+            required
+            type="password" 
+            placeholder="Contraseña" 
+            [(ngModel)]="user.password"
+            name="password"
+			id="password"
+			#password="ngModel"
+        />
         <br />
-        <input type="button" value="Enviar" class="login-button" (click)="signUp()"/>
+        <input 
+            type="button" 
+            value="Enviar" 
+            class="login-button" 
+            (click)="signUp()" 
+            [disabled]="name.invalid || lastname.invalid || email.invalid || password.invalid"/>
     </div>
 </div>

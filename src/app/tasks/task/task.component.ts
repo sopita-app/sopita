@@ -9,6 +9,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export class TaskComponent implements OnInit {
 	@Input() eachTask: any;
 	@Output() evento: any = new EventEmitter();
+	@Output() update = new EventEmitter()
 
 	constructor() {
 		
@@ -19,4 +20,7 @@ export class TaskComponent implements OnInit {
 	removeTask(id: string) {
 		this.evento.emit(id);
 	}
+	taskstatus(id:string){
+		this.update.emit(id)
+	  }
 }

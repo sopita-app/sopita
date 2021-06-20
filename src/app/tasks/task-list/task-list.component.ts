@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/auth.service';
 import { TasksService } from '../tasks.service';
 
@@ -9,19 +10,23 @@ import { TasksService } from '../tasks.service';
 })
 export class TaskListComponent {
 	tasks: any = [];
-
+	loading:boolean=false
 	constructor(
 		private taskService: TasksService,
 		private authService: AuthService
 	) {
 		//creo que es asi, mañana sigo viendo y lo pruebo
 		this.authService.loginStatus.subscribe(res =>{
+			this.loading = true
 			if(res){
-				this.taskService.getTasks().subscribe((data: any) => {
-					this.taskService.tasks = data.response.filter(
+				this.taskService.getTasks().pipe(
+					map((res:any)=> res.response)
+				).subscribe((data: any) => {
+					this.taskService.tasks = data.filter(
 						(tarea: any) =>
 							tarea.userId.email === this.authService.loggedUser?.email
 					);
+					this.loading = false
 					this.tasks = this.taskService.tasks	
 				});
 
@@ -36,4 +41,16 @@ export class TaskListComponent {
 			this.tasks = this.taskService.tasks
 		});
 	}
+	taskToDone(id:string){
+		this.taskService.taskstatus(id)
+		.pipe(
+			map((res:any)=>res.response)
+		)
+		.subscribe((data:any) =>{
+		  console.log(data)
+		  this.taskService.tasks = this.tasks.map(task => task._id === id ? data : task)
+		  this.tasks = this.taskService.tasks
+		})
+	  }
+  
 }

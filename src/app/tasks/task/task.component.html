@@ -6,8 +6,8 @@
         {{eachTask.description}}
     </p>
     <div class="buttonDiv">
-        <button class="buttonDone button">Hecho</button>
-        <button class="buttonDelete button" (click)="removeTask(eachTask._id)">
+        <button *ngIf="!eachTask.done" class="buttonDone button" (click)="taskstatus(eachTask._id)">Hecho</button>
+        <button class="buttonDelete button" (click)="removeTask(eachTask._id)" *ngIf="eachTask.done">
             Eliminar
         </button>
     </div>

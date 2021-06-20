@@ -21,19 +21,19 @@ export class NavbarComponent implements OnInit {
   }
   
   ngOnInit(){
-     this.isLogged = this.authService.checkLoginStatus()
+     this.isLogged = this.authService.checkLoginStatus();
   }
   
   openDialog() {
-		this.dialog.open(FormComponent);
+		this.dialog.open(FormComponent, {width: '600px',});
 	}
   
   toggleNavBar(){
-    this.showNavBar = !this.showNavBar
+    this.showNavBar = !this.showNavBar;
   }
   
   logOut(){
-    this.showNavBar = !this.showNavBar
-   this.authService.logOut()
+    this.showNavBar = !this.showNavBar;
+    this.authService.logOut();
   }
 }

@@ -32,9 +32,10 @@ export class AuthService {
       .pipe(
         map((res) => res.response),
         tap(
-          res => localStorage.setItem('user', res.token)
-        )
-          )
+          res => {
+            localStorage.setItem('user', res.token);
+          }
+        ))
           .subscribe((user) => {
             this.loggedUser = user
             console.log(user)
@@ -87,12 +88,17 @@ export class AuthService {
       headers:{
         Authorization: 'Bearer ' + token
     }
-    }).pipe(
-      map(res => res.response)
-    ).subscribe( user => {
-      this.loginStatus.next(true)
+    }).subscribe( res => {
+      if(res.response){
+        this.loginStatus.next(true)
+        this.loggedUser = res.response
+      }
+    }, error => {
+      localStorage.clear()
+      console.error(error)
+      this.router.navigate(['./auth/login'])
 
-      this.loggedUser = user
-    })
+    }
+    )
   }
 }
