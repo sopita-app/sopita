@@ -4,6 +4,7 @@ import { map, tap } from 'rxjs/operators';
 import { BehaviorSubject, of } from 'rxjs';
 import { Router } from '@angular/router';
 import * as interfaces from '../interfaces/user.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class AuthService {
   public get auth(){
     return this.loggedUser
   }
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {
     this.loginStatus.subscribe(result =>{
       console.log(result)
     })
@@ -38,7 +39,7 @@ export class AuthService {
         ))
           .subscribe((user) => {
             this.loggedUser = user
-            console.log(user)
+            this.snackBar.open(`Hola ${user.firstName}!`, ':)', {duration: 2500})
             //redirectionarrrr
             if(user._id){
           this.loginStatus.next(true)
@@ -68,6 +69,7 @@ export class AuthService {
   }
 
   logOut(){
+    this.snackBar.open(`Nos vemos pronto, ${this.loggedUser.firstName}!`, '', {duration:2000})
     this.loggedUser = null
     localStorage.clear()
     this.router.navigate(['./auth/login'])
@@ -96,6 +98,7 @@ export class AuthService {
     }, error => {
       localStorage.clear()
       console.error(error)
+      this.snackBar.open('Inicia sesión, por favor', 'Ok', {duration: 2000})
       this.router.navigate(['./auth/login'])
 
     }
