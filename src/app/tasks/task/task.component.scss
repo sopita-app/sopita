@@ -1,19 +1,50 @@
 .container {
 	margin: 2em;
 	padding: 1em;
-	width: 260px;
-	background-color: #50007f;
-	border-radius: 20px;
-	color: #fff;
+	width: 290px;
+	border-radius: 10px;
+	background: #ffffff;
+	box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.2);
+	.taskTitle {
+		font-size: 20px;
+		font-weight: 500;
+		color: #50007f;
+		text-transform: capitalize;
+	}
+	.taskDescription {
+		text-transform: capitalize;
+	}
+}
+
+.doneTask{
+	background-color: #ffc100;
 }
 
 .buttonDiv {
 	display: flex;
 	justify-content: center;
+	.buttonDelete{
+		background-color: #f0efed;
+		color: #fe5000;
+	}
+	:hover {
+		background-color: #6f09aa;
+		transition: all 0.2s;
+	}
 }
 
 .button {
+	width: 60px;
+    height: 36px;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
+	background-color: #50007f;
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+	.button-icon {
+		font-size: 21px;
+	}
 }
+

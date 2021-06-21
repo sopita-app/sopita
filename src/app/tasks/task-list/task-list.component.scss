@@ -1,8 +1,13 @@
+@import '../../../../scss/mixins';
+
 .tasks-list-Container {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	@include breakpoint-desktop-1 {
+		justify-content: start;
+	}
 }
-
 .spinnerContainer {
 	display: flex;
 	flex-direction: column;
@@ -10,15 +15,41 @@
 	margin-top: 5rem;
 }
 .textBox {
-	//text-align: center;
 	margin-top: 7rem;
 	color: #333;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	letter-spacing: 1px;
+	line-height: initial;
 	div {
-		h3 {
-			font-size: 32px;
+		h2 {
+			font-size: 22px;
+			@include breakpoint-desktop-1 {
+				font-size: 32px;
+			}
 		}
+		h3 {
+			font-size: 28px;
+			letter-spacing: 1px;
+			line-height: initial;
+			@include breakpoint-desktop-1 {
+				font-size: 42px;
+			}
+		}
+		p {
+			letter-spacing: 1px;
+			font-size: 16px;
+			@include breakpoint-desktop-1 {
+				font-size: 24px;
+			}
+		}
+		img {
+			width: 100%;
+		}
+	}
+	@include breakpoint-desktop-1 {
+		flex-direction: row;
 	}
 }

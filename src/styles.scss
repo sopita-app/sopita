@@ -82,17 +82,16 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-attachment: fixed;
+	color: #333;
+	min-height: calc(100vh - 112px);
 }
 
-html,
-body {
+html {
 	height: 100%;
 }
+
 body {
 	margin: 0;
+	position: relative;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.body{
-	margin-top: 90px;
 }
