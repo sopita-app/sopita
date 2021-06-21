@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1624289829407,
+  "timestamp": 1624301296570,
   "index": "sopita/index.html",
   "assetGroups": [
     {
@@ -23,7 +23,8 @@
         "https:\\/\\/fonts\\.gstatic\\.com",
         "https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=Roboto:wght@300;400;500&amp;display=swap",
         "https:\\/\\/fonts\\.googleapis\\.com\\/icon\\?family=Material\\+Icons",
-        "https:\\/\\/pro\\.fontawesome\\.com\\/.*"
+        "https:\\/\\/pro\\.fontawesome\\.com\\/.*",
+        "https:\\/\\/organizateunpoco\\.herokuapp\\.com\\/api\\/.*"
       ]
     },
     {
