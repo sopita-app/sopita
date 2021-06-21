@@ -3,7 +3,7 @@
   "index": "/index.html",
   "assetGroups": [
     {
-      "name": "agenda-app",
+      "name": "Sopita",
       "installMode": "prefetch",
       "resources": {
         "files": [
@@ -29,6 +29,7 @@
       "resources": {
         "files": [
           "/assets/**",
+          "/sopita/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
