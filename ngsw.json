@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1624301296570,
+  "timestamp": 1624303694392,
   "index": "sopita/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "sopita/favicon.ico",
         "sopita/index.html",
-        "sopita/main.5f8601c2a7e6d2915160.js",
+        "sopita/main.6d97b4719c70455c4c7e.js",
         "sopita/manifest.webmanifest",
         "sopita/polyfills.94daefd414b8355106ab.js",
         "sopita/runtime.7b63b9fd40098a2e8207.js",
@@ -79,8 +79,8 @@
     "sopita/assets/icons/icon-96x96.png": "50406319dec2e409928e84f9b4724908a7c16378",
     "sopita/assets/sopita-icon.png": "7726f6166ee8b2c72f5f994a691ac335b0390729",
     "sopita/favicon.ico": "590080c8f6c61777323735e1622760af83788eeb",
-    "sopita/index.html": "e12542c6ada90a16fc3058a6796bccf261291b6f",
-    "sopita/main.5f8601c2a7e6d2915160.js": "54ed0450d484548cd7091ec646c65c2815abc88e",
+    "sopita/index.html": "707a15314686111031e70569fb985b43a9e36423",
+    "sopita/main.6d97b4719c70455c4c7e.js": "275e2804b1526d24718f722d7a1e609a89942d0f",
     "sopita/manifest.webmanifest": "e1d5a3efe39b53db7f319396ec453ab1325168ca",
     "sopita/polyfills.94daefd414b8355106ab.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "sopita/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
