@@ -1,0 +1,50 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "sopita",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js",
+          "/manifest.json"
+        ],
+        "urls":[
+          "https://fonts.gstatic.com",
+          "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap",
+          "https://fonts.googleapis.com/icon?family=Material+Icons",
+          "https://pro.fontawesome.com/**" 
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups":[
+    {
+   "name": "sopita-api",
+   "urls":["https://organizateunpoco.herokuapp.com/api/**"],
+   "cacheConfig": {
+     "maxAge": "12h",
+     "maxSize": 20,
+     "timeout": "10s",
+     "strategy": "freshness"
+   }
+
+    }
+  ]
+}
