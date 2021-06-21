@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1624286263444,
+  "timestamp": 1624287008848,
   "index": "sopita/index.html",
   "assetGroups": [
     {
@@ -80,7 +80,7 @@
     "sopita/favicon.ico": "590080c8f6c61777323735e1622760af83788eeb",
     "sopita/index.html": "994244a38734f5ffaf12da8133d84fd4c5951291",
     "sopita/main.6838854dabc8512cc207.js": "18906697e5c8afe92fc7e56bad79cb701d691000",
-    "sopita/manifest.webmanifest": "bd6bdcdb685432bfb2b36e33368585b5f2a9434c",
+    "sopita/manifest.webmanifest": "e1d5a3efe39b53db7f319396ec453ab1325168ca",
     "sopita/polyfills.94daefd414b8355106ab.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
     "sopita/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "sopita/styles.0df7217daf186bece6fa.css": "eba72c256c6da4426669e78854d00e95e3980bd3"
