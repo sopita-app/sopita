@@ -10,20 +10,39 @@
 		font-weight: 500;
 		color: #50007f;
 		text-transform: capitalize;
+		span {
+			font-weight: bold;
+		}
 	}
 	.taskDescription {
 		text-transform: capitalize;
+		span {
+			font-weight: bold;
+		}
+	}
+	.taskHour {
+		span {
+			font-weight: bold;
+		}
+	}
+	.taskDate {
+		span {
+			font-weight: bold;
+		}
+	}
+	@media (max-width: 480px) {
+		margin: 2em 0;
 	}
 }
 
-.doneTask{
+.doneTask {
 	background-color: #ffc100;
 }
 
 .buttonDiv {
 	display: flex;
 	justify-content: center;
-	.buttonDelete{
+	.buttonDelete {
 		background-color: #f0efed;
 		color: #fe5000;
 	}
@@ -35,7 +54,7 @@
 
 .button {
 	width: 60px;
-    height: 36px;
+	height: 36px;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
@@ -47,4 +66,3 @@
 		font-size: 21px;
 	}
 }
-

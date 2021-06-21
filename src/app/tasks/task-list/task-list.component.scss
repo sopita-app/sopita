@@ -1,9 +1,10 @@
-@import '../../../../scss/mixins';
+@import "../../../../scss/mixins";
 
 .tasks-list-Container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 1.5rem;
 	@include breakpoint-desktop-1 {
 		justify-content: start;
 	}

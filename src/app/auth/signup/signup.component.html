@@ -5,54 +5,22 @@
     </div>
     <div class="login-form">
         <h3>Nombre:</h3>
-        <input 
-            required
-            type="text" 
-            placeholder="Nombre" 
-            [(ngModel)]="user.name"
-            name="name"
-			id="name"
-			#name="ngModel"
-        /><br />
+        <input required type="text" placeholder="Nombre" [(ngModel)]="user.name" name="name" id="name"
+            #name="ngModel" /><br />
         <h3>Apellido:</h3>
-        <input 
-            required
-            type="text" 
-            placeholder="Apellido" 
-            [(ngModel)]="user.lastname"
-            name="lastname"
-			id="lastname"
-			#lastname="ngModel"
-        /><br />
+        <input required type="text" placeholder="Apellido" [(ngModel)]="user.lastname" name="lastname" id="lastname"
+            #lastname="ngModel" /><br />
         <h3>Email:</h3>
-        <input 
-            required
-            type="text" 
-            placeholder="Email" 
-            [(ngModel)]="user.email"
-            name="email"
-			id="email"
-			#email="ngModel"
-        /><br />
+        <input required type="text" placeholder="Email" [(ngModel)]="user.email" name="email" id="email"
+            #email="ngModel" /><br />
         <h3>Contraseña:</h3>
-        <input 
-            required
-            type="password" 
-            placeholder="Contraseña" 
-            [(ngModel)]="user.password"
-            name="password"
-			id="password"
-			#password="ngModel"
-        />
+        <input required type="password" placeholder="Contraseña" [(ngModel)]="user.password" name="password"
+            id="password" #password="ngModel" />
         <br />
-        <input 
-            type="button" 
-            value="Enviar" 
-            class="login-button" 
-            (click)="signUp()" 
-            [disabled]="name.invalid || lastname.invalid || email.invalid || password.invalid"/>
-        <p>¿Ya tenés cuenta?</p>    
-        <a href="/auth/register">Iniciar sesión</a>    
+        <input type="button" value="Enviar" class="login-button" (click)="signUp()"
+            [disabled]="name.invalid || lastname.invalid || email.invalid || password.invalid" />
+        <p>¿Ya tenés cuenta?</p>
+        <a href="/auth/login">Iniciar sesión</a>
     </div>
 </div>
 <br><br><br>

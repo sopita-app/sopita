@@ -1,9 +1,9 @@
 <div class="container" [ngClass]="eachTask.done ? 'doneTask' : null">
-    <h3 class="taskTitle">{{eachTask.title}}</h3>
-    <h4 class="taskDate">{{eachTask.date | date}}</h4>
-    <h4 class="taskHour">{{eachTask.time}}</h4>
+    <h3 class="taskTitle"><span>Titulo: </span>{{eachTask.title}}</h3>
+    <h4 class="taskDate"><span>Fecha: </span>{{eachTask.date | date}}</h4>
+    <h4 class="taskHour"><span>Hora: </span>{{eachTask.time}}</h4>
     <p class="taskDescription">
-        {{eachTask.description}}
+        <span>Descripción: </span>{{eachTask.description}}
     </p>
     <div class="buttonDiv">
         <button *ngIf="!eachTask.done" class="buttonDone button" (click)="taskstatus(eachTask._id)">Hecho</button>

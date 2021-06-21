@@ -6,40 +6,15 @@
 	</div>
 	<div class="login-form">
 		<h3>Tarea:</h3>
-		<input
-			required
-			type="text"
-			placeholder="Titulo de la tarea..."
-			[(ngModel)]="formData.title"
-			name="name"
-			id="name"
-			#name="ngModel"
-		/><br />
+		<input required type="text" placeholder="Titulo de la tarea..." [(ngModel)]="formData.title" name="name"
+			id="name" #name="ngModel" /><br />
 		<h3>Descripción:</h3>
-		<input
-			type="text"
-			placeholder="Descripción de la tarea..."
-			[(ngModel)]="formData.description"
-		/><br />
+		<input type="text" placeholder="Descripción de la tarea..." [(ngModel)]="formData.description" /><br />
 		<h3>Fecha:</h3>
-		<input
-			type="date"
-			placeholder="Fecha..."
-			[(ngModel)]="formData.date"
-		/><br />
+		<input type="date" placeholder="Fecha..." [(ngModel)]="formData.date" /><br />
 		<h3>Hora:</h3>
-		<input
-			type="time"
-			placeholder="Hora..."
-			[(ngModel)]="formData.time"
-		/><br />
+		<input type="time" placeholder="Hora..." [(ngModel)]="formData.time" /><br />
 		<br />
-		<input
-			mat-dialog-close
-			type="button"
-			value="Agregar"
-			(click)="addTask()"
-			[disabled]="name.invalid"
-		/>
+		<input mat-dialog-close type="button" value="Agregar" (click)="addTask()" [disabled]="name.invalid" />
 	</div>
 </div>
